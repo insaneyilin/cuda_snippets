@@ -10,17 +10,7 @@
 #include <stdio.h>
 #include <cuda_runtime.h>
 
-static void CheckCudaError(cudaError_t err,
-                           const char *file,
-                           int line ) {
-  if (err != cudaSuccess) {
-    printf("%s in %s at line %d\n", cudaGetErrorString(err),
-           file, line);
-    exit(EXIT_FAILURE);
-  }
-}
-
-#define CHECK_CUDA_ERROR(err) (CheckCudaError(err, __FILE__, __LINE__))
+#include "../common/common.h"
 
 void cudaVecAdd(int vec_len, int *in_v1, int *in_v2, int *out_v);
 
