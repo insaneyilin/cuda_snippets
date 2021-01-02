@@ -69,7 +69,7 @@ int main(int argc, char **argv) {
   CHECK_CUDA_ERROR(cudaMemset(dev_histo, 0,
                               256 * sizeof(int)));
 
-  // kernel launch - 2x the number of mps gave best timing
+  // kernel launch - 2x the number of multi_processor gave best timing
   cudaDeviceProp prop;
   CHECK_CUDA_ERROR(cudaGetDeviceProperties(&prop, 0));
   int blocks = prop.multiProcessorCount;

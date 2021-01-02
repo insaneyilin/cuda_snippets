@@ -21,7 +21,7 @@ void CleanUp(DataBlock *d) {
 }
 
 __global__ void Kernel(unsigned char *ptr, int ticks) {
-  // map from (BlockIdx, threadIdx) to pixel position
+  // map (BlockIdx, threadIdx) to pixel position
   // each thread processes one pixel
   int x = threadIdx.x + blockIdx.x * blockDim.x;
   int y = threadIdx.y + blockIdx.y * blockDim.y;

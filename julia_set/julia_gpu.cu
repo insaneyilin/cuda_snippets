@@ -55,7 +55,7 @@ __device__ int IsInJuliaSet(int x, int y) {
 }
 
 __global__ void Kernel(unsigned char *ptr) {
-  // map from blockIdx to pixel position
+  // map blockIdx to pixel position
   // each block process one pixel
   int x = blockIdx.x;
   int y = blockIdx.y;
